@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"F:/biji/笔记/笔记1/oo/.claude/settings.local.json\" \"F:/biji/笔记/笔记1/.claude/settings.local.json\")"
+    ]
+  }
+}

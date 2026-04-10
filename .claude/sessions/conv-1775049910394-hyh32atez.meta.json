@@ -1,0 +1,20 @@
+{
+  "id": "conv-1775049910394-hyh32atez",
+  "title": "将里面的找不到“/static/screenshots/screenshot_008_227704a...",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1775049910394,
+  "updatedAt": 1775050453226,
+  "lastResponseAt": 1775049997436,
+  "sessionId": "e7053621-c353-4706-b5a4-68f378d64256",
+  "sdkSessionId": "e7053621-c353-4706-b5a4-68f378d64256",
+  "currentNote": "03-Obsidian笔记/04-Obsidian第二大脑.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 11108,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 11108,
+    "percentage": 6
+  }
+}

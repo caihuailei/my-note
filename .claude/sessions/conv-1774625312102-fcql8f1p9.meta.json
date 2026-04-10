@@ -1,0 +1,20 @@
+{
+  "id": "conv-1774625312102-fcql8f1p9",
+  "title": "分析一下这个书籍的内容",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1774625312103,
+  "updatedAt": 1774956291377,
+  "lastResponseAt": 1774625686462,
+  "sessionId": "9471efb8-fd81-444c-bc43-89f55e86e996",
+  "sdkSessionId": "9471efb8-fd81-444c-bc43-89f55e86e996",
+  "currentNote": "python程序设计.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 13862,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 13862,
+    "percentage": 7
+  }
+}

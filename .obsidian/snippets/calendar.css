@@ -1,0 +1,40 @@
+/* Calendar 插件样式调整 */
+
+/* 改变日历背景色 */
+.calendar-container {
+    background-color: var(--background-primary);
+}
+
+/* 今天的日期高亮 */
+.today {
+    background-color: #e3f2fd !important;
+    border-radius: 50%;
+}
+
+/* 周末颜色 */
+.weekend {
+    color: #e53935;
+}
+
+/* 日历表头 */
+.calendar-header {
+    font-weight: bold;
+    background-color: var(--background-secondary);
+}
+
+/* 隐藏日历右上角的设置按钮 */
+.calendar-settings-btn {
+    display: none;
+}
+
+/* 调整日历大小 */
+.calendar-container {
+    font-size: 14px;
+}
+
+/* 当前选中的日期 */
+.selected-date {
+    background-color: #1976d2 !important;
+    color: white !important;
+    border-radius: 50%;
+}

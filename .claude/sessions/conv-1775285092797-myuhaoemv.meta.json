@@ -1,0 +1,20 @@
+{
+  "id": "conv-1775285092797-myuhaoemv",
+  "title": "这个Excalidraw格式是怎么样的？",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1775285092799,
+  "updatedAt": 1775285231008,
+  "lastResponseAt": 1775285231008,
+  "sessionId": "c35c3900-c34d-4f69-b21d-86e107d8be78",
+  "sdkSessionId": "c35c3900-c34d-4f69-b21d-86e107d8be78",
+  "currentNote": "Excalidraw/Drawing 2026-04-04 14.41.59.excalidraw.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 12110,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 12110,
+    "percentage": 6
+  }
+}

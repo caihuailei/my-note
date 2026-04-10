@@ -1,0 +1,19 @@
+{
+  "id": "conv-1775457176845-u07vm4w1n",
+  "title": "根据我的这一篇作业文档，你帮我优化一下它的表达。比如说里面的作业部分呢，你最好是用一个框架，他们全部...",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1775457176845,
+  "updatedAt": 1775624372243,
+  "lastResponseAt": 1775462466738,
+  "sessionId": "cef87afa-9b6e-4559-acdd-5af96f672fb9",
+  "sdkSessionId": "cef87afa-9b6e-4559-acdd-5af96f672fb9",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 22039,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 22039,
+    "percentage": 11
+  }
+}

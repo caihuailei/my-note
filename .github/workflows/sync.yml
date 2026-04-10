@@ -1,0 +1,36 @@
+name: Daily Sync
+
+on:
+  schedule:
+    # 每天 UTC 时间 16:00 运行（北京时间 00:00）
+    - cron: '0 16 * * *'
+  workflow_dispatch: # 允许手动运行
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Git
+        run: |
+          git config --global user.name 'caihuailei'
+          git config --global user.email 'caihuailei@users.noreply.github.com'
+
+      - name: Sync with Obsidian Vault
+        env:
+          VAULT_PATH: '.'
+        run: |
+          # 检查是否有更改
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "Auto-sync from Obsidian Vault $(date '+%Y-%m-%d %H:%M:%S')"
+            git push
+            echo "✅ Sync completed"
+          else
+            echo "No changes to sync"
+          fi

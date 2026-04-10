@@ -1,0 +1,38 @@
+# Obsidian
+.obsidian/stats.json
+.obsidian/workspace.json
+.obsidian/workspace-*.json
+.obsidian/app.json
+.obsidian/plugins/*.json
+.obsidian/core-plugins.json
+.obsidian/community-plugins.json
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node modules
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Large files - but not Markdown files
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.mp4
+*.mov
+*.avi
+
+# Downloads
+Downloads/
+
+# Temp files
+*.tmp
+*.temp

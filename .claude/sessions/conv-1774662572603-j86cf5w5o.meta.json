@@ -1,0 +1,20 @@
+{
+  "id": "conv-1774662572603-j86cf5w5o",
+  "title": "ascll编码的缺点是什么",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1774662572603,
+  "updatedAt": 1774956287451,
+  "lastResponseAt": 1774663669201,
+  "sessionId": "4af59b47-850c-40a1-b0cb-3f12951850e6",
+  "sdkSessionId": "4af59b47-850c-40a1-b0cb-3f12951850e6",
+  "currentNote": "3-28网课-3.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 12498,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 12498,
+    "percentage": 6
+  }
+}

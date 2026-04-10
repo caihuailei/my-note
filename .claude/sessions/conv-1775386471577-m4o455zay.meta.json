@@ -1,0 +1,19 @@
+{
+  "id": "conv-1775386471577-m4o455zay",
+  "title": "1",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1775386471577,
+  "updatedAt": 1775400804824,
+  "lastResponseAt": 1775400804824,
+  "sessionId": "d4cfc109-3d65-400a-9dfd-37e9c57e334a",
+  "sdkSessionId": "d4cfc109-3d65-400a-9dfd-37e9c57e334a",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 28857,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 28857,
+    "percentage": 14
+  }
+}

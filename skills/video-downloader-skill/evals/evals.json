@@ -1,0 +1,59 @@
+{
+  "skill_name": "video-downloader",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我下载这些课程视频：https://example.com/course/video1, https://example.com/course/video2",
+      "expected_output": "生成获取视频直链的 Python 脚本，并提供批量下载方案",
+      "files": [],
+      "assertions": [
+        {
+          "description": "输出包含 Playwright 代码",
+          "type": "contains",
+          "target": "playwright"
+        },
+        {
+          "description": "输出包含视频下载逻辑",
+          "type": "contains",
+          "target": "download"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "怎么获取这个网站的视频直链？网站用 Vue 写的，视频地址是动态加载的",
+      "expected_output": "解释使用 Playwright 拦截网络响应的方法，并提供代码示例",
+      "files": [],
+      "assertions": [
+        {
+          "description": "解释动态加载原理",
+          "type": "contains",
+          "target": "networkidle"
+        },
+        {
+          "description": "提供响应监听代码",
+          "type": "contains",
+          "target": "page.on(\"response\""
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "写个脚本批量下载 5 个视频回放，地址在 video_urls.txt 里",
+      "expected_output": "生成批量下载脚本，支持 yt-dlp 或 curl",
+      "files": ["video_urls.txt"],
+      "assertions": [
+        {
+          "description": "支持批量处理",
+          "type": "contains",
+          "target": "for"
+        },
+        {
+          "description": "使用 yt-dlp 或 curl",
+          "type": "contains",
+          "target": "subprocess"
+        }
+      ]
+    }
+  ]
+}

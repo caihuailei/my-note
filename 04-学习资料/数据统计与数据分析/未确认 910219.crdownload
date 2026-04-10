@@ -1,0 +1,152 @@
+import os
+import json
+import cv2
+
+# ===================== 配置参数（请根据你的实际情况修改）=====================
+# # 原始图片所在文件夹
+# IMAGE_FOLDER = r"D:\input_photo(rename)\A5-204-week3-class1-8"  # 你的图片目录
+# # Label Studio 导出的 JSON 文件路径
+# JSON_PATH = r"D:\output-label\project-11-at-2026-03-28-05-11-b8565b64.json"
+# # 裁剪后的人头图片保存目录
+# OUTPUT_FOLDER = r"D:\output-label\ditou-A5-204-week3-class1-8"
+# # 标注标签名称（与你的 Label Studio 配置一致）
+# TARGET_LABEL = "低头"
+
+IMAGE_FOLDER = r"E:\all-img\a1-308"  # 你的图片目录
+# Label Studio 导出的 JSON 文件路径
+JSON_PATH = r"F:\a1_308\project-102-at-2026-03-31-17-59-80e609ac.json"  # 你的 JSON 文件路径
+# 裁剪后的人头图片保存目录
+OUTPUT_FOLDER = r"F:\a1_308"
+# 标注标签名称（与你的 Label Studio 配置一致）
+TARGET_LABEL = "到课"
+# ============================================================================
+
+# 创建输出目录
+if not os.path.exists(OUTPUT_FOLDER):
+    os.makedirs(OUTPUT_FOLDER)
+print(f"创建输出目录: {OUTPUT_FOLDER}")
+
+# 读取 Label Studio 导出的 JSON 文件
+with open(JSON_PATH, "r", encoding="utf-8") as f:
+    annotations_data = json.load(f)
+
+# 遍历每一张图片的标注结果
+for img_idx, item in enumerate(annotations_data):
+    # 从 JSON 中获取的文件名（带随机前缀）
+    json_filename = os.path.basename(item["data"]["image"])
+
+    # 提取关键部分：找到 "frame_" 开始的部分，直到文件名结束
+    frame_start_idx = json_filename.find("ch0001_20260309T083726Z_20260309T100646Z_0300000100200000000_")
+    if frame_start_idx == -1:
+        print(f"警告: 文件名 {json_filename} 中未找到 'ch0001_20260309T083726Z_20260309T100646Z_0300000100200000000_'，跳过...")
+        continue
+    key_part = json_filename[frame_start_idx:]
+
+    # 在本地图片文件夹中查找匹配的文件
+    local_img_path = None
+    for local_file in os.listdir(IMAGE_FOLDER):
+        if local_file == key_part:
+            local_img_path = os.path.join(IMAGE_FOLDER, local_file)
+            break
+
+    if not local_img_path:
+        print(f"警告: 未找到与 {json_filename} 匹配的本地图片，跳过...")
+        continue
+
+    # 读取原始图片
+    img = cv2.imread(local_img_path)
+    if img is None:
+        print(f"警告: 无法读取图片 {local_img_path}，跳过...")
+        continue
+    img_height, img_width = img.shape[:2]
+    print(f"\n正在处理图片: {local_img_path} (尺寸: {img_width}x{img_height})")
+
+    # ===================== 核心修改开始 =====================
+    # 遍历该图片的所有标注
+    # 注意：这里假设 item 下是 "annotations" 列表
+    annotations = item.get("annotations", [])
+    if not annotations:
+        print("未找到 annotations，尝试读取 predictions...")
+        annotations = item.get("predictions", [])
+
+    head_count_total = 0  # 统计整张图裁剪了多少人头
+
+    for ann_idx, annotation in enumerate(annotations):
+        head_count = 0  # 统计当前这个 annotation 裁剪了多少人头
+
+        # 遍历每个标注结果中的区域（每个人头）
+        results = annotation.get("result", [])
+        for result in results:
+            try:
+                # --- 修复点 1: 检查类型 ---
+                # 使用 .get 检查 type，如果不存在 type 键，默认设为 None
+                result_type = result.get("type")
+                if result_type != "rectanglelabels":
+                    continue  # 如果不是矩形框，跳过这个 result，处理下一个
+
+                # --- 修复点 2: 安全获取标签列表 (核心修复) ---
+                # 原来的写法: result["value"]["rectanglelabels"] 会直接报错
+                # 新的写法: 使用 .get()，如果 rectanglelabels 不存在，返回空列表 []程序就会自动跳过这个错误的标注
+                value = result.get("value", {})
+                labels = value.get("rectanglelabels", [])
+
+                # --- 修复点 3: 检查标签 ---
+                # 如果 TARGET_LABEL 在 labels 列表中
+                if TARGET_LABEL in labels:
+                    # 提取 Label Studio 输出的归一化坐标 (x, y, width, height)
+                    # 使用 .get 设置默认值 0，防止 x, y, width, height 缺失
+                    x_norm = value.get("x", 0) / 100.0
+                    y_norm = value.get("y", 0) / 100.0
+                    w_norm = value.get("width", 0) / 100.0
+                    h_norm = value.get("height", 0) / 100.0
+
+                    # 转换为像素坐标
+                    x1 = int(x_norm * img_width)
+                    y1 = int(y_norm * img_height)
+                    w = int(w_norm * img_width)
+                    h = int(h_norm * img_height)
+                    x2 = x1 + w
+                    y2 = y1 + h
+
+                    # 确保坐标在图片范围内
+                    x1 = max(0, x1)
+                    y1 = max(0, y1)
+                    x2 = min(img_width, x2)
+                    y2 = min(img_height, y2)
+
+                    # 防止坐标异常（例如框的大小为0）
+                    if x2 <= x1 or y2 <= y1:
+                        print(f"  警告: 标注坐标异常，跳过 (x1={x1}, y1={y1}, x2={x2}, y2={y2})")
+                        continue
+
+                    # 裁剪人头区域
+                    head_img = img[y1:y2, x1:x2]
+
+                    # 生成保存文件名
+                    base_name = os.path.splitext(os.path.basename(local_img_path))[0]
+                    output_filename = f"{base_name}_head_{head_count + 1}_ann_{ann_idx + 1}.jpg"
+                    output_path = os.path.join(OUTPUT_FOLDER, output_filename)
+
+                    # 保存裁剪后的图片
+                    cv2.imwrite(output_path, head_img)
+                    print(f" 已保存人头: {output_filename}")
+                    head_count += 1
+                    head_count_total += 1
+
+            except Exception as e:
+                # 捕获所有意外错误，防止程序彻底崩溃
+                print(f"  处理某个标注时发生未知错误: {e}，跳过该标注。")
+                continue
+
+        if head_count == 0:
+            print(f"  第 {ann_idx + 1} 组标注中未找到 '{TARGET_LABEL}' 标签的标注。")
+        else:
+            print(f"  第 {ann_idx + 1} 组标注中裁剪了 {head_count} 个人头。")
+
+    if head_count_total == 0:
+        print(f" 未找到任何 '{TARGET_LABEL}' 标签的标注。")
+    else:
+        print(f"✅ 本张图片共裁剪 {head_count_total} 个人头。")
+
+print("\n✅ 所有图片处理完成！")
+print(f"裁剪后的人头图片已保存至: {OUTPUT_FOLDER}")

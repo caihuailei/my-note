@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python web_server_load_balancer.py)",
+      "Bash(pip list:*)",
+      "Bash(findstr -i \"flask\\\\|socket\")",
+      "Bash(pip install:*)",
+      "Bash(python server.py)"
+    ]
+  }
+}

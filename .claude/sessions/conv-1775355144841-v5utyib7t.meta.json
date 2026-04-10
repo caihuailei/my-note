@@ -1,0 +1,19 @@
+{
+  "id": "conv-1775355144841-v5utyib7t",
+  "title": "打开十个新闻网站，扫一眼、复制、粘贴、整理，再发布到内容平台——这一套流程，每天要花一个多小时。",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1775355144841,
+  "updatedAt": 1775358254402,
+  "lastResponseAt": 1775355850232,
+  "sessionId": "421f4b04-dd97-476f-8cf5-9b68ada0fbbf",
+  "sdkSessionId": "421f4b04-dd97-476f-8cf5-9b68ada0fbbf",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 13642,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 13642,
+    "percentage": 7
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "conv-1774956303483-sofl0lkb7",
+  "title": "用 Obsidian 给 AI 装\"长期记忆\"，让它真正变成你的个人助理",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1774956303483,
+  "updatedAt": 1775052858928,
+  "lastResponseAt": 1775052241594,
+  "sessionId": "06453b59-8a00-4f19-a3d6-aca2074ef7fa",
+  "sdkSessionId": "06453b59-8a00-4f19-a3d6-aca2074ef7fa",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 19062,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 19062,
+    "percentage": 10
+  }
+}

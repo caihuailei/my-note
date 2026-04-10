@@ -1,0 +1,20 @@
+{
+  "id": "conv-1774525397069-fbmc5nmfc",
+  "title": "总结一下这篇文档",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1774525397070,
+  "updatedAt": 1774625298329,
+  "lastResponseAt": 1774625293182,
+  "sessionId": "b64383d1-d047-41bb-abf5-c3b675514d03",
+  "sdkSessionId": "b64383d1-d047-41bb-abf5-c3b675514d03",
+  "currentNote": "MinerU_markdown_2024版《初中必刷题》数学__7下（BS）-狂K重点_2036958720017072128.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 11515,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 11515,
+    "percentage": 6
+  }
+}

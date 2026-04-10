@@ -1,0 +1,19 @@
+{
+  "id": "conv-1775284396224-fj52bcbw5",
+  "title": "这个excalidraw的插件怎么用？",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1775284396224,
+  "updatedAt": 1775284981485,
+  "lastResponseAt": 1775284702533,
+  "sessionId": "2be23b77-229c-41df-b759-0a01e37c9358",
+  "sdkSessionId": "2be23b77-229c-41df-b759-0a01e37c9358",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 12876,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 12876,
+    "percentage": 6
+  }
+}

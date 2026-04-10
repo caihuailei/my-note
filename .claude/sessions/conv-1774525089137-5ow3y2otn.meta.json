@@ -1,0 +1,19 @@
+{
+  "id": "conv-1774525089137-5ow3y2otn",
+  "title": "用一个什么办法可以将一个$变成$$而不改变$$的？",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1774525089137,
+  "updatedAt": 1774525380273,
+  "lastResponseAt": 1774525246122,
+  "sessionId": "f8a84ee4-4b73-493a-9786-6ffa8cdd6f8e",
+  "sdkSessionId": "f8a84ee4-4b73-493a-9786-6ffa8cdd6f8e",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 11277,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 11277,
+    "percentage": 6
+  }
+}

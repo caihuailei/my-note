@@ -1,0 +1,20 @@
+{
+  "id": "conv-1774710797660-nqbxu7ftw",
+  "title": "帮我完善一下这周数学的上课内容",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1774710797660,
+  "updatedAt": 1774956284426,
+  "lastResponseAt": 1774711165502,
+  "sessionId": "22d43049-43d3-4205-ab21-578eac7bb5b9",
+  "sdkSessionId": "22d43049-43d3-4205-ab21-578eac7bb5b9",
+  "currentNote": "3-28 课程辅导.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 13504,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 13504,
+    "percentage": 7
+  }
+}

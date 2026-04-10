@@ -1,0 +1,19 @@
+{
+  "id": "conv-1775491049350-tzvg3acpv",
+  "title": "claude install",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1775491049351,
+  "updatedAt": 1775578105205,
+  "lastResponseAt": 1775578105205,
+  "sessionId": "16c99988-cdba-41ec-8e41-b1d83caaeb81",
+  "sdkSessionId": "16c99988-cdba-41ec-8e41-b1d83caaeb81",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 21684,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 21684,
+    "percentage": 11
+  }
+}

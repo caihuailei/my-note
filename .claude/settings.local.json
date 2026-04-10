@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:chgdegabxaa.kekpwl.cn)",
+      "Bash(mkdir:*)",
+      "Bash(yt-dlp:*)",
+      "Bash(curl -s -L \"https://chgdegabxaa.kekpwl.cn/c/7NXTMn3\")",
+      "Bash(curl -s \"https://chgdegab.csfengyuyun.com/vod/vod.html?file_id=5145403719820541309&sign=c2a7479745&type=1&app_id=1317978474\")",
+      "Bash(echo:*)",
+      "Bash(python -c \"import playwright; print\\(''playwright ok''\\)\")",
+      "Bash(pip install:*)",
+      "Bash(python -m playwright install chromium)",
+      "Bash(python get_video_links.py)",
+      "Bash(python:*)"
+    ]
+  }
+}

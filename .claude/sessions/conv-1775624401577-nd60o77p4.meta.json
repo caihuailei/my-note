@@ -1,0 +1,20 @@
+{
+  "id": "conv-1775624401577-nd60o77p4",
+  "title": "错误",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1775624401579,
+  "updatedAt": 1775625101180,
+  "lastResponseAt": 1775625101180,
+  "sessionId": "e29d5ea4-70b5-4985-aa16-b0461f0fbbc0",
+  "sdkSessionId": "e29d5ea4-70b5-4985-aa16-b0461f0fbbc0",
+  "currentNote": "claude.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 13664,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 13664,
+    "percentage": 7
+  }
+}

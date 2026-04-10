@@ -1,0 +1,19 @@
+{
+  "id": "conv-1775396017712-165fq7grg",
+  "title": "了解一下飞书cli这个skill",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1775396017712,
+  "updatedAt": 1775400711326,
+  "lastResponseAt": 1775396132398,
+  "sessionId": "b795d83d-3d6d-4b30-8c69-0028e23f925c",
+  "sdkSessionId": "b795d83d-3d6d-4b30-8c69-0028e23f925c",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 11903,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 11903,
+    "percentage": 6
+  }
+}
